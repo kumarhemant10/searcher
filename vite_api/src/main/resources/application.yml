@@ -1,0 +1,30 @@
+spring:
+  profiles.active: local
+
+---
+spring:
+  profiles: local
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/demo_db?autoReconnect=true&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+server:
+  port: 8000
+  context-path: /vite
+
+logging:
+  file: W:\repo\GIT\vite.log
+  level:
+    org.springframework: ERROR
+    com.otsuka.ods: ERROR
+    org.hibernate: ERROR
+
+elasticsearch:
+  url: http://127.0.0.1:9200/
