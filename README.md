@@ -1,7 +1,8 @@
-**vite** (is for quick French)
+**vite** (is French for "Quick")
 
 ## About
-this is search tool provide on big data loaded in [Elastic Search](https://www.elastic.co/products/elasticsearch) indices.
+* Vite provides APIs on big data loaded in [Elastic Search](https://www.elastic.co/products/elasticsearch) indices.
+* These APIs can be consumed by UI Client to provide custom search options. 
 
 ## Technology
 * Java 8
