@@ -1,13 +1,14 @@
 package com.hk.prj.vite.repository;
 
-import com.hk.prj.vite.model.Columns;
-import com.hk.prj.vite.model.Index;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.hk.prj.vite.model.Columns;
 
 @Repository
 public interface ColumnRepository extends JpaRepository<Columns, Long> {
-    List<Columns> findByIndexId(Long indexId);
+    Optional<List<Columns>> findByIndexId(Long indexId);
 }

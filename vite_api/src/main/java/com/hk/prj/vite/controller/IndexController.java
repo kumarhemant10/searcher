@@ -36,8 +36,8 @@ public class IndexController {
     }
 
     @PostMapping(UrlConstants.GET_DATA_BYTYPE)
-    public ResponseEntity<Object> searchData(@PathVariable("index") String type){
-        Object data= indexService.getData(type);
+    public ResponseEntity<Object> searchData(@PathVariable("index") String indexName){
+        Object data= indexService.getData(indexName);
         return new ResponseEntity<>(data,HttpStatus.OK);
     }
 

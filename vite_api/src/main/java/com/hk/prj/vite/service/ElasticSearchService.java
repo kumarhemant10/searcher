@@ -1,4 +1,4 @@
-package com.hk.prj.vite.dao;
+package com.hk.prj.vite.service;
 
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class ElasticSearchDAO implements IElasticSearchDAO {
+public class ElasticSearchService implements ElasticSearchServiceImpl {
 
     @Value("${elasticsearch.url}")
     String e_url;

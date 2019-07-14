@@ -1,11 +1,11 @@
-package com.hk.prj.vite.dao;
+package com.hk.prj.vite.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.elasticsearch.client.RestHighLevelClient;
 
 import java.io.IOException;
 
-public interface IElasticSearchDAO {
+public interface ElasticSearchServiceImpl {
 
     RestHighLevelClient getHighLevelRestClient();
 

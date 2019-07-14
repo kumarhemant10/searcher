@@ -5,6 +5,6 @@ public class UrlConstants {
     public static final  String GET_INDICES = "/indices";
     public static final  String GET_COLUMNS= "/indices/{indexId}/columns/";
 
-    public static final  String GET_DATA_BYTYPE= "/data/{index}";
+    public static final  String GET_DATA_BYTYPE= "/indices/{index}/data";
 
 }

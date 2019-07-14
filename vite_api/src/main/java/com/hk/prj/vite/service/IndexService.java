@@ -1,11 +1,9 @@
 package com.hk.prj.vite.service;
 
+import java.util.List;
+
 import com.hk.prj.vite.model.Columns;
 import com.hk.prj.vite.model.Index;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public interface IndexService {
     /**
@@ -14,7 +12,7 @@ public interface IndexService {
      * @param type
      * @return
      */
-    Object getData(String type);
+    Object getData(String indexName);
 
     /**
      * it will return all available indices in system

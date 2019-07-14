@@ -1,7 +1,7 @@
 package com.hk.prj.vite.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.hk.prj.vite.dao.IElasticSearchDAO;
+import com.hk.prj.vite.exception.ResourceNotFoundException;
 import com.hk.prj.vite.model.Columns;
 import com.hk.prj.vite.model.Index;
 import com.hk.prj.vite.repository.ColumnRepository;
@@ -19,20 +19,23 @@ public class IndexServiceImpl implements IndexService {
 
     @Autowired ColumnRepository columnRepository ;
 
-    @Autowired IElasticSearchDAO elasticSearchDAO;
+    @Autowired ElasticSearchServiceImpl elasticSearchDAO;
 
     public List<Index> getIndices(){
         return indexRepository.findAll();
     }
 
     public List<Columns> getColumns(Long indexId){
-        return columnRepository.findByIndexId(indexId);
+        return columnRepository.findByIndexId(indexId).orElseThrow(()-> new ResourceNotFoundException("Columns not found for index with id: "+indexId)) ;
     }
 
-    public Object getData(String type){
+    public Object getData(String indexName){
+    	
+    	Index index=indexRepository.findByName(indexName).orElseThrow(()-> new ResourceNotFoundException("Index not found with name: "+indexName));
+    	
         JsonNode data = null;
         try {
-            data = elasticSearchDAO.getData(type);
+            data = elasticSearchDAO.getData(index.getUrl());
         } catch (IOException e) {
             e.printStackTrace();
         }

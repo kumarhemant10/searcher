@@ -1,16 +1,16 @@
 package com.hk.prj.vite.controller;
 
-import com.hk.prj.vite.AbstractTest;
-import com.hk.prj.vite.constant.UrlConstants;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import com.hk.prj.vite.AbstractTest;
+import com.hk.prj.vite.constant.UrlConstants;
 
 public class DataControllerTest extends AbstractTest {
     @Override
@@ -46,7 +46,7 @@ public class DataControllerTest extends AbstractTest {
 
     @Test
     public void getData() throws Exception {
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(UrlConstants.GET_DATA_BYTYPE, "contract")
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(UrlConstants.GET_DATA_BYTYPE, "Shakespeare")
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
