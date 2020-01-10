@@ -13,15 +13,18 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate:
+     ddl-auto: validate
   jackson:
     serialization:
-      write-dates-as-timestamps: false
+      write-dates-as-timestamps: false      
 server:
   port: 8000
   context-path: /vite
 
 logging:
-  file: W:\repo\GIT\vite.log
+  file: C:\Projects\logs\vite.log
   level:
     org.springframework: ERROR
     com.otsuka.ods: ERROR
@@ -29,3 +32,6 @@ logging:
 
 elasticsearch:
   url: http://127.0.0.1:9200/
+
+flyway:
+  baseline-on-migrate: true  

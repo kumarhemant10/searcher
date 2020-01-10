@@ -9,22 +9,28 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-@Table(name="columns")
+@Table(name="config_columns")
 public class Columns {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+   
     @Column(name="index_id")
     private Long indexId;
+    
     @Column(name="column_display_name")
     private String columnDisplayName;
+    
     @Column(name="column_name")
     private String columnName;
+    
     @Column(name="search")
-    private byte search;
+    private boolean search;
+    
     @Column(name="display")
-    private byte display;
+    private boolean display;
+    
     @Column(name="active")
-    private byte active;
+    private boolean active;
 
 }

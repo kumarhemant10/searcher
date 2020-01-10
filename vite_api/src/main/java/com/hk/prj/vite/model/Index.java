@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-@Table(name="indices")
+@Table(name="config_index")
 public class Index {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
