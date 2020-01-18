@@ -29,7 +29,7 @@ public class RestExceptionHandler {
 	 */
     @ExceptionHandler(ResourceNotFoundException.class)
     protected ResponseEntity<String> handleEntityNotFound(ResourceNotFoundException ex) {
-        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
 }
