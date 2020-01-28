@@ -13,9 +13,10 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+    generate-ddl: true
     # Hibernate ddl auto (create, create-drop, validate, update)
     hibernate:
-     ddl-auto: validate
+     ddl-auto: create
   jackson:
     serialization:
       write-dates-as-timestamps: false      
@@ -32,6 +33,3 @@ logging:
 
 elasticsearch:
   url: http://127.0.0.1:9200/
-
-flyway:
-  baseline-on-migrate: true  
