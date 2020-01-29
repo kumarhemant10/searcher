@@ -10,12 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class User extends BaseEntity implements Serializable {
 
 	public User(User user) {
 		super();
@@ -23,7 +25,7 @@ public class User implements Serializable {
 		this.userName = user.getUserName();
 		this.password = user.getPassword();
 		this.email = user.getEmail();
-		this.active = user.isActive();
+		this.setActive(user.isActive());
 	}
 
 	public User() {
@@ -50,8 +52,7 @@ public class User implements Serializable {
 	 @Column(name = "email")
 	 private String email;
 	 
-	 @Column(name ="active")
-	 private boolean active;
+	
 	 
 	
 

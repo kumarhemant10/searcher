@@ -1,17 +1,26 @@
 package com.hk.prj.vite.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 import javax.persistence.*;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 
 @Entity
 @Table(name="config_columns")
-public class Columns {
-    @Id
+public class Columns extends BaseEntity implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5968104684585583169L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
    

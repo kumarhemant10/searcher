@@ -16,6 +16,11 @@
 * [Download Elastic Search](https://www.elastic.co/downloads/past-releases/elasticsearch-6-4-0) 
 * Access indices at url: http://127.0.0.1:9200/_cat/indices?v
 * [Load sample data into Elastic Search](https://www.elastic.co/guide/en/kibana/6.4/tutorial-load-dataset.html)
+```
+	1. curl -H Content-Type:application/json -XPOST 127.0.0.1:9200/bank/account/_bulk?pretty --data-binary @accounts.json
+	2. curl -H Content-Type:application/json -XPOST localhost:9200/shakespeare/doc/_bulk?pretty --data-binary @shakespeare_6.0.json
+	3. curl -H Content-Type:application/json -XPOST localhost:9200/_bulk?pretty --data-binary @logs.jsonl
+```	
 * Create new database with name vite_db using script schema.sql under resources.
 
 ## build
