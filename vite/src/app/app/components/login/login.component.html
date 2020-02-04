@@ -1,0 +1,46 @@
+<div class="login-bg text-center">
+	<div class="mask vh-100 pt-5">
+		<h1 class="text-warning text-uppercase mt-4 py-4 mb-3">Login Here</h1>
+		<h5 class="text-white font-weight-light mb-4">Common Search Screen </h5>
+		<form (ngSubmit)="onSubmit()" #login="ngForm" class="m-auto p-4 login-form-block">		  
+	      <div class="form-group input-group mb-2">
+	        <div class="input-group-prepend">
+	            <div class="input-group-text bg-white">
+	                <i class="fa fa-user"></i>
+	            </div>
+	        </div>
+	        <input type="text" placeholder="Enter Username" class="form-control border-left-0 border-right-5" id="username" required [(ngModel)]="model.username" name="username" #spy #name="ngModel">
+	        <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+	        	Username is required
+	        </div> -->
+	      </div>
+	 
+	      <div class="form-group input-group mb-4">
+	        <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-unlock-alt"></i>
+                </div>
+            </div>
+	        <input type="password" placeholder="Enter Password" class="form-control border-left-0 border-right-5" id="password" required [(ngModel)]="model.password" name="password" #pass="ngModel">
+	        <!-- <div [hidden]="pass.valid || pass.pristine" class="alert alert-danger">
+	        	Password is required
+	        </div> -->
+	      </div>
+	 
+	      <div class="mb-3">
+	      	<a routerLink="/register" class="float-left text-blue font-90 mt-1" data-toggle="tooltip" title="CLick here to Change Password" data-original-title="CLick here to Change Password">
+                <u>Forgot Password?</u>
+            </a>
+	      	<button type="submit" class="btn btn-sm bg-blue text-white float-right w-25" [disabled]="!login.form.valid" style="padding: 5px 0px 5px 0px;">
+				<i class="fa fa-sign-in"></i> Login
+	      	</button>
+	      	<div class="clearfix"></div>
+	      </div>
+	      <small class="text-muted">
+	          <span>Need help? Contact CoderX</span><br/>
+	          <a href="mailto: hkchauhan022@gmail.com" class="text-blue"><u>Hemant Kumar</u></a>
+	      </small>
+	      
+	    </form>
+	</div>
+</div>

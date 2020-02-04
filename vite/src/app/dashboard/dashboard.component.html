@@ -1,0 +1,26 @@
+<p>
+  Component: dashboard
+</p>
+
+<h2> selected index: {{index}}</h2> 
+<button (click)="getGridData(index)">search</button>
+
+<table>
+  <thead>
+    <tr>
+      <td>Key</td>
+      <td>ID</td>
+      <td>Name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let d of gridData.hits.hits">
+      <td>{{d._source.Filepath}}</td>
+      <td>test</td>
+      <td>column</td>
+    </tr>
+  </tbody>
+</table>
+
+
+		
