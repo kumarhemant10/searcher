@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
-import { Index } from '../home/index';
+import { Index } from '../models/index';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
