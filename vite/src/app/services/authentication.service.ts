@@ -14,7 +14,7 @@ export class AuthenticationService {
 	authToken: string;
 
   	constructor(private http: HttpClient) { 
-  		this.authToken = JSON.parse(localStorage.getItem('authToken'));
+  		this.authToken = localStorage.getItem('authToken');
   	}
 
 
