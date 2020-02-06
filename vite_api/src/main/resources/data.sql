@@ -8,6 +8,6 @@ INSERT INTO `config_columns` ( `index_id`, `column_display_name`, `column_name`,
 	( 1, 'Type', 'type', b'1', b'1', b'1','hemant',now(),'hemant',now());
 	
 INSERT INTO `config_index` (`index_name`, `index_url`, `active`,`last_modified_by`,`last_modified_datetime`,`created_by`,`created_datetime`) VALUES
-	('Shakespeare', 'shakespeare',b'1','hemant',now(),'hemant',now()),
-	( 'Accounts', 'bank',b'1','hemant',now(),'hemant',now());
+	('Ecommere-data', 'kibana_sample_data_ecommerce',b'1','hemant',now(),'hemant',now()),
+	( 'sample-logs', 'kibana_sample_data_logs',b'1','hemant',now(),'hemant',now());
 	

@@ -46,7 +46,7 @@ public class DataControllerTest extends AbstractTest {
 
     @Test
     public void getData() throws Exception {
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(UrlConstants.GET_DATA_BYTYPE, "Shakespeare")
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(UrlConstants.GET_DATA_BYTYPE, "Ecommere-data")
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
         int status = mvcResult.getResponse().getStatus();
