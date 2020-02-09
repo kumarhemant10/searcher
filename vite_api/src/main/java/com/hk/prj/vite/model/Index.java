@@ -3,6 +3,7 @@ package com.hk.prj.vite.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.io.Serializable;
 
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name="config_index")
 public class Index extends BaseEntity implements Serializable {
@@ -29,5 +31,7 @@ public class Index extends BaseEntity implements Serializable {
 
     @Column(name="index_url")
     private String url;
+    
+    
 
 }
