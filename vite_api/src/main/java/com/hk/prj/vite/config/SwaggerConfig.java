@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 import com.google.common.collect.Lists;
+import com.hk.prj.vite.constant.UrlConstants;
 
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -47,7 +48,7 @@ public class SwaggerConfig {
 	private final Logger log = LoggerFactory.getLogger(SwaggerConfig.class);
 
 	public static final String AUTHORIZATION_HEADER = "Authorization";
-	public static final String DEFAULT_INCLUDE_PATTERN = "/api/.*";
+	public static final String DEFAULT_INCLUDE_PATTERN = UrlConstants.V1_API_BASE+"/.*";
 
 	@Bean
 	public Docket api() {
