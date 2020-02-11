@@ -17,6 +17,7 @@ import java.util.List;
  */
 @CrossOrigin
 @RestController
+@RequestMapping(UrlConstants.API_BASE)
 public class IndexController {
 
     @Autowired IndexService indexService;

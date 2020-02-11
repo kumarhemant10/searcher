@@ -28,7 +28,7 @@ logging:
   file: C:\Projects\logs\vite.log
   level:
     org.springframework: ERROR
-    com.otsuka.ods: ERROR
+    com.hk.prj: DEBUG
     org.hibernate: ERROR
 
 elasticsearch:
