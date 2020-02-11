@@ -1,7 +1,5 @@
 package com.hk.prj.vite;
 
-import java.util.TimeZone;
-
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -26,7 +24,6 @@ public class Application extends SpringBootServletInitializer {
 	@Autowired PasswordEncoder passwordEncoder;
 	
 	public static void main(String[] args) {
-		TimeZone.setDefault(TimeZone.getTimeZone("Etc/UTC"));
 		SpringApplication.run(Application.class, args);
 	}
 	

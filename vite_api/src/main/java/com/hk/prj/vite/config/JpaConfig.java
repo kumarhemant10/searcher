@@ -1,5 +1,9 @@
 package com.hk.prj.vite.config;
 
+import java.util.TimeZone;
+
+import javax.annotation.PostConstruct;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
@@ -15,5 +19,10 @@ public class JpaConfig {
     public AuditorAware<String> auditorAware() {
         return new AuditorAwareImpl();
     }
+	
+	@PostConstruct
+	public void setTimeZone() {
+		TimeZone.setDefault(TimeZone.getTimeZone("Etc/UTC"));
+	}
 	
 }
