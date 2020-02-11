@@ -11,4 +11,6 @@ import com.hk.prj.vite.model.Columns;
 @Repository
 public interface ColumnRepository extends JpaRepository<Columns, Long> {
     Optional<List<Columns>> findByIndexId(Long indexId);
+
+	Optional<Columns> findByIndexIdAndId(long indexId, Long columnId);
 }
