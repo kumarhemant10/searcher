@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+<title>Vite - Login</title>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+	<form class="login-form-block p-3 font-90" id="frm-login">
+		<h5 class="text-info">Sign in</h5>
+		<div class="mb-3">
+			<label class="text-semibold mb-1">Username:</label> <input
+				type="text" class="form-control form-control-sm font-90"
+				name="username" placeholder="Enter Username" id="uname"
+				required="required" />
+		</div>
+		<div class="mb-3">
+			<label class="text-semibold mb-1">Password:</label> <input
+				type="password" class="form-control form-control-sm font-90"
+				name="password" placeholder="Enter Password" id="pwd"
+				required="required" />
+		</div>
+		<button class="btn btn-sm btn-block bg-success text-white"
+			type="submit">Login</button>
+		<div id="login-error" class="text-ganger mt-2"></div>
+
+
+		<div id="messageDiv" style="display: none;"></div>
+
+
+	</form>
+
+	<script type="text/javascript">
+
+jQuery(document).ready(function ($) {
+    $(function () {
+    	$("#frm-login")
+ 	   .submit(function () {
+ 		    var requestURL = "/vite/api/auth";
+     	    var username = $("#uname").val();
+     	    var password = $("#pwd").val();
+     	    var user = {
+     	        "username": username,
+     	        "password": password
+     	    };
+ 		   
+     	   $.ajax({
+   	        type: "POST",
+   	        url: requestURL,
+   	     	data: JSON.stringify(user),
+         	contentType: "application/json",   	        
+         	async: false,
+   	        success: function (results, textStatus, xhr) {
+   	            var token = xhr.getResponseHeader('Authorization');                
+   	            if (token) {              
+   	                $('#messageDiv').css("display", "block");
+   	                $('#messageDiv').html("You are Successfully logged in");
+   	                window.sessionStorage.setItem("token",token);
+   	                window.location = "/vite/dashboard";	 	            
+   	            } 
+   	           
+   	        } ,   //success close
+   	        error: function (results, textStatus, xhr) {
+   	            document.getElementById("loader").style.display = "none";
+   	            $('#messageDiv').css("display", "block");
+   	            $('#messageDiv').html("Username or Password incorrect.");
+
+   	        }  //error close
+   	    }); //ajax close
+   	    
+   	    return false;
+ 	   }); //submit close
+    }); //line 37 close
+});  //jquery close
+
+</script>
+</body>
+

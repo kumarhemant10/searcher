@@ -24,8 +24,8 @@ import lombok.Data;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
 	 
-	@Column(name ="active")
-	private boolean active;
+	@Column(name ="active" )
+	private boolean active=Boolean.TRUE;
 	
 	@LastModifiedBy
 	@Column(name="last_modified_by")

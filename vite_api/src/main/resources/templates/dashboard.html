@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<title>User Management</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous" />
+</head>
+<body>
+	 <div id="tableDiv" style="margin-top: 40px">
+        Table will gentare here.
+    </div>
+    
+	<!--  jQuery-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+	
+	jQuery(document).ready(function ($) {
+		
+		var requestURL = "/vite/v1/api/users";
+		//ajax get to users api
+		
+		 $.ajax({
+   	        type: "GET",
+   	        url: requestURL,   	
+   	    	beforeSend: function(request) {
+   	     		 request.setRequestHeader("Authorization", window.sessionStorage.getItem("token"));
+   	   		},
+   	        success: function (data) {
+   	        	var table_body = '<table border="1">';
+   	        	table_body+='<tr> <th> User Name </th> <th> User Password </th> <th> User Email </th> </tr>';
+   	        	
+   	        	$.each(data, function(i) {   	        	  
+   	        		table_body+='<tr>';
+   	        		table_body +='<td>'+ data[i].userName + '</td>';
+   	        		table_body +='<td>'+ data[i].password + '</td>';
+   	        		table_body +='<td>'+ data[i].email + '</td>';
+                    table_body+='</tr>';
+   	        	});//each close
+   	        	
+   	        	table_body+='</table>';
+   	        	
+   	         $('#tableDiv').html(table_body);
+   	        	
+   	        } ,   //success close
+   	        error: function (response) {
+      	         var obj = $.parseJSON(response);
+       	         console.log("Error: " + obj);
+
+   	        }  //error close
+   	    }); //ajax close
+		
+	});//doc ready close
+	
+	</script>
+</body>

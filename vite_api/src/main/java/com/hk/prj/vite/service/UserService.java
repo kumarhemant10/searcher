@@ -1,12 +1,19 @@
 package com.hk.prj.vite.service;
 
-import com.hk.prj.vite.dto.UserDTO;
-import com.hk.prj.vite.model.CustomUserDetails;
+import java.util.List;
+
+import com.hk.prj.vite.model.User;
 
 public interface UserService {
 
-	UserDTO save(UserDTO user);
+	User save(User user);
 	
-	CustomUserDetails getLoggedInUser();
+	List<User> save(List<User> users);
+	
+	List<User> get();
+
+	User get(long userId);
+
+	void delete(long userId);
 
 }

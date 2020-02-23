@@ -58,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// allow all POST requests 
 		.antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
 		.antMatchers("/users/**").permitAll()
+		.antMatchers("/","/dashboard").permitAll()
 		// any other requests must be authenticated
 		.anyRequest().authenticated();
 	}

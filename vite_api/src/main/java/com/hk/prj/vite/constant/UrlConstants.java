@@ -16,4 +16,6 @@ public class UrlConstants {
     
     public static final  String INDEX_DATA_BY_ID= "/indices/{id}/data";
 
+    public static final  String USERS = V1_API_BASE+"/users";
+    public static final  String USERS_BY_ID = USERS+"/{id}";
 }
